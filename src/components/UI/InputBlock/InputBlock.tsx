@@ -1,15 +1,22 @@
-import React, { FC } from 'react';
+import React, { FC, ReactNode } from 'react';
 
 interface InputBlockProps {
   label: string;
   name: string;
-  input: JSX.Element;
+  children: ReactNode;
   error?: string;
   annotation?: string;
   className?: string;
 }
 
-const InputBlock: FC<InputBlockProps> = ({ label, name, input, error, className, annotation }) => {
+const InputBlock: FC<InputBlockProps> = ({
+  label,
+  name,
+  error,
+  className,
+  annotation,
+  children,
+}) => {
   const baseClass = 'input-block';
   const classString = className ? `${baseClass} ${className}` : baseClass;
 
@@ -19,7 +26,7 @@ const InputBlock: FC<InputBlockProps> = ({ label, name, input, error, className,
         {label}
       </label>
       <div className="input-block__input-wrapper">
-        <div className="input-block__input">{input}</div>
+        <div className="input-block__input">{children}</div>
         {error && <p className="input-block__error">{error}</p>}
       </div>
       {annotation && (
