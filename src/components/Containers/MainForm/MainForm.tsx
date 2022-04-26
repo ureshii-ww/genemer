@@ -51,7 +51,14 @@ const MainForm = () => {
         name="password"
         error={errors.password?.message}
         annotation="Ваш новый пароль должен содержать не менее 5 символов">
-        <InputText {...register('password', { required: 'Укажите пароль' })} type="password" />
+        <InputText
+          {...register('password', {
+            required: 'Укажите пароль',
+            minLength: { value: 5, message: 'Пароль должен содержать не менее 5 символов' },
+          })}
+          type="password"
+          className={errors.password && 'input-text--error'}
+        />
       </InputBlock>
 
       <InputBlock
@@ -65,6 +72,7 @@ const MainForm = () => {
             validate: value => (value === getValues().password ? true : 'Пароли должны совпадать'),
           })}
           type="password"
+          className={errors.passwordRepeat && 'input-text--error'}
         />
       </InputBlock>
 
@@ -75,11 +83,15 @@ const MainForm = () => {
         name="email"
         error={errors.email?.message}
         annotation="Можно изменить адрес, указанный при регистрации">
-        <InputText {...register('email', { required: 'Укажите E-mail' })} type="email" />
+        <InputText
+          {...register('email', { required: 'Укажите E-mail' })}
+          className={errors.email && 'input-text--error'}
+          type="email"
+        />
       </InputBlock>
 
-      <fieldset>
-        <p>Я согласен</p>
+      <fieldset className="input-block input-block--short">
+        <p className="input-block__label">Я согласен</p>
         <InputCheckbox
           {...register('isGettingEmails')}
           title="принимать актуальную информацию на емейл"
