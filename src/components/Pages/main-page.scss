@@ -1,17 +1,19 @@
+@use 'src/styles/variables/measuring';
+
 .main-page {
-  min-width: 100vw;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  padding: measuring.$m-90 0;
 
   &__container {
     width: min(900px, 90vw);
   }
 
   &__header {
-
+    margin-bottom: measuring.$m-42;
   }
 
   &__content {
