@@ -1,7 +1,7 @@
 import React from 'react';
 import GreetingsBlock from '../Containers/GreetingsBlock/GreetingsBlock';
 import MainForm from '../Containers/MainForm/MainForm';
-import StatusTooltip from '../Containers/StatusBlock/StatusTooltip';
+import StatusTooltip from '../Containers/StatusTooltip/StatusTooltip';
 import './main-page.scss'
 
 const MainPage = () => {

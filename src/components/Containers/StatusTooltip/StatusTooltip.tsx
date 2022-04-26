@@ -5,7 +5,7 @@ import TransparentButton from '../../UI/TransparentButton/TransparentButton';
 import './status-tooltip.scss';
 
 const StatusTooltip = () => {
-  const { statusValue, isEditing, handleChangeStatus, handleSaveStatus, toggleIsEditing } =
+  const { areaRef, statusValue, isEditing, handleChangeStatus, handleSaveStatus, toggleIsEditing } =
     useStatusTooltip();
 
   return (
@@ -21,7 +21,7 @@ const StatusTooltip = () => {
           {!isEditing ? (
             <p>{statusValue || 'Введите свой статус'}</p>
           ) : (
-            <StatusArea defaultValue={statusValue} onChange={handleChangeStatus} />
+            <StatusArea onInput={handleChangeStatus} contentEditable={true} ref={areaRef} />
           )}
         </div>
       </div>
