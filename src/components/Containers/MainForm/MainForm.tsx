@@ -6,6 +6,7 @@ import InputText from '../../UI/InputText/InputText';
 import InputCheckbox from '../../UI/InputCheckbox/InputCheckbox';
 import MainButton from '../../UI/MainButton/MainButton';
 import Separator from '../../UI/Separator/Separator';
+import './main-form.scss';
 
 const MainForm = () => {
   const { useFormData, universitiesData, citiesData, lastModified, onSubmit } = useMainForm();
@@ -17,7 +18,7 @@ const MainForm = () => {
   } = useFormData;
 
   return (
-    <form onSubmit={handleSubmit(onSubmit)}>
+    <form className="main-form" onSubmit={handleSubmit(onSubmit)}>
       <InputBlock label="Ваш город" name="city">
         <InputSelect {...register('city')} defaultValue="city-placeholder">
           {citiesData.map(city => (
@@ -98,9 +99,9 @@ const MainForm = () => {
         />
       </fieldset>
 
-      <div>
-        <MainButton>Изменить</MainButton>
-        {lastModified && <p>Последнее изменение {lastModified}</p>}
+      <div className="main-form__buttons">
+        <MainButton className="main-form__button">Изменить</MainButton>
+        {lastModified && <p className="main-form__last-edit">Последнее изменение {lastModified}</p>}
       </div>
     </form>
   );

@@ -1,0 +1,21 @@
+@use 'src/styles/variables/size';
+@use 'src/styles/placeholders/text-size';
+@use 'src/styles/variables/color';
+@use 'src/styles/variables/measuring';
+
+.main-form {
+  &__buttons {
+    padding-left: size.$form-label-width;
+    display: flex;
+    align-items: center;
+  }
+
+  &__button {
+    margin-right: measuring.$m-12;
+  }
+
+  &__last-edit {
+    @extend %text-xs;
+    color: color.$tc-regular-gray;
+  }
+}
