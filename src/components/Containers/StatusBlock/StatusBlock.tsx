@@ -6,7 +6,6 @@ import TransparentButton from '../../UI/TransparentButton/TransparentButton';
 const StatusBlock = () => {
   const { statusValue, isEditing, handleChangeStatus, handleSaveStatus, toggleIsEditing } =
     useStatusBlock();
-  console.log(isEditing);
 
   return (
     <div>
