@@ -32,7 +32,7 @@ export const useMainForm = () => {
       0
     );
     citiesArr.splice(0, 0, citiesArr.splice(biggestIndex, 1)[0]);
-    return citiesArr.filter(city => +city.population > 5000);
+    return citiesArr.filter(city => +city.population > 50000);
   }, []);
 
   const onSubmit = (data: MainFormInputs) => {

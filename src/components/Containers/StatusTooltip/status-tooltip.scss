@@ -2,6 +2,7 @@
 @use 'src/styles/variables/size';
 @use 'src/styles/variables/measuring';
 @use 'src/styles/placeholders/text-size';
+@use 'src/styles/variables/device';
 
 .status-tooltip {
   min-height: 2.875rem;
@@ -11,7 +12,7 @@
   padding: measuring.$m-12;
 
   &__wrapper {
-    padding-left: size.$form-label-width;
+    padding-left: min(#{size.$form-label-width}, 23%);
   }
 
   &__buttons {
@@ -38,9 +39,24 @@
     height: 0;
     position: absolute;
     top: -(measuring.$m-8);
-    left: measuring.$m-8;
+    left: min(#{measuring.$m-8}, 20%);
     border-left: measuring.$m-8 solid transparent;
     border-right: measuring.$m-8 solid transparent;
     border-bottom: measuring.$m-8 solid color.$bg-status;
+  }
+}
+
+@media (max-width: device.$sm) {
+  .status-tooltip {
+    width: 100%;
+
+    &__wrapper {
+      padding-left: 5vw;
+    }
+
+    &__buttons {
+      top: unset;
+      bottom: -(measuring.$m-24);
+    }
   }
 }

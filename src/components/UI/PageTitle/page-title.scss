@@ -1,6 +1,8 @@
 @use 'src/styles/variables/color';
 @use 'src/styles/placeholders/text-size';
 @use 'src/styles/placeholders/text-weight';
+@use 'src/styles/variables/device';
+@use 'src/styles/variables/measuring';
 
 .page-title {
   @extend %weight-bd;
@@ -9,8 +11,15 @@
   &__greeting{
     color: color.$tc-header-gray;
   }
+}
 
-  &__username {
+@media (max-width: device.$sm) {
+  .page-title {
+    display: flex;
+    flex-direction: column;
 
+    &__greeting {
+      margin-bottom: measuring.$m-4;
+    }
   }
 }

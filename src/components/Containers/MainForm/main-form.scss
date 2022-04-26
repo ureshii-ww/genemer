@@ -2,6 +2,7 @@
 @use 'src/styles/placeholders/text-size';
 @use 'src/styles/variables/color';
 @use 'src/styles/variables/measuring';
+@use 'src/styles/variables/device';
 
 .main-form {
   &__buttons {
@@ -17,5 +18,23 @@
   &__last-edit {
     @extend %text-xs;
     color: color.$tc-regular-gray;
+  }
+}
+
+@media (max-width: device.$sm) {
+  .main-form {
+    &__buttons {
+      padding-left: 0;
+      justify-content: space-between;
+      flex-direction: row-reverse;
+    }
+
+    &__button {
+      margin: 0;
+    }
+
+    &__last-edit {
+      margin-right: measuring.$m-12;
+    }
   }
 }

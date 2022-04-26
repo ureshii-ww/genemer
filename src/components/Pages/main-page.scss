@@ -1,4 +1,7 @@
 @use 'src/styles/variables/measuring';
+@use 'src/styles/variables/device';
+
+$header-mb: measuring.$m-42;
 
 .main-page {
   min-height: 100vh;
@@ -13,10 +16,14 @@
   }
 
   &__header {
-    margin-bottom: measuring.$m-42;
+    margin-bottom: $header-mb;
   }
+}
 
-  &__content {
-
+@media (max-width: device.$sm) {
+  .main-page {
+    &__header {
+      margin-bottom: calc(#{$header-mb} + #{measuring.$m-24});
+    }
   }
 }

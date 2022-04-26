@@ -2,6 +2,7 @@
 @use 'src/styles/variables/size';
 @use 'src/styles/variables/measuring';
 @use 'src/styles/variables/color';
+@use 'src/styles/variables/device';
 
 .input-block {
   padding: 0;
@@ -29,6 +30,7 @@
   &__annotation {
     @extend %text-xs;
     color: color.$tc-regular-gray;
+
     &-wrapper {
       display: flex;
       align-items: center;
@@ -38,5 +40,54 @@
 
   &--short {
     grid-template-columns: size.$form-label-width 1fr;
+  }
+}
+
+@media (max-width: device.$lg) {
+  .input-block {
+    grid-template-areas:
+      'label input'
+      'annotation annotation';
+
+    &:not(.input-block--short) {
+      grid-template-columns: size.$form-label-width size.$form-input-width;
+    }
+
+    &__label {
+      grid-area: label;
+    }
+
+    &__input-wrapper {
+      grid-area: input;
+      margin-bottom: measuring.$m-4;
+    }
+
+    &__annotation-wrapper {
+      grid-area: annotation;
+      padding-left: size.$form-label-width;
+    }
+  }
+}
+
+@media (max-width: device.$sm) {
+  .input-block {
+    grid-template-areas:
+      'label'
+      'input'
+      'annotation';
+
+    &:not(.input-block--short), &.input-block--short {
+      grid-template-columns: 1fr;
+    }
+
+    &__label {
+      margin-bottom: measuring.$m-12;
+    }
+
+    &__annotation {
+      &-wrapper {
+        padding-left: 0;
+      }
+    }
   }
 }

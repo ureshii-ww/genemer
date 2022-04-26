@@ -1,4 +1,6 @@
 @use 'src/styles/variables/measuring';
+@use 'src/styles/variables/device';
+@use 'src/styles/placeholders/text-size';
 
 .input-checkbox {
   margin-right: measuring.$m-10;
@@ -6,5 +8,14 @@
   &__wrapper {
     display: flex;
     align-items: center;
+  }
+}
+
+@media (max-width: device.$sm) {
+  .input-checkbox {
+    &__label {
+      font-size: 0.875rem;
+      line-height: 1.25rem;
+    }
   }
 }
