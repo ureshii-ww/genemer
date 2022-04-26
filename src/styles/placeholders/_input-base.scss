@@ -1,0 +1,18 @@
+@use 'src/styles/variables/measuring';
+@use 'src/styles/variables/color';
+
+%input-base {
+  width: 100%;
+  height: measuring.$m-30;
+  border-radius: 0;
+  border: 1px solid color.$bd-input;
+  padding: 0 measuring.$m-12;
+  background-color: transparent;
+  text-overflow: ellipsis;
+  overflow: hidden;
+
+  &--error {
+    border-color: color.$tc-error;
+    margin-bottom: measuring.$m-4;
+  }
+}
