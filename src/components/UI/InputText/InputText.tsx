@@ -11,8 +11,8 @@ const InputText = forwardRef<HTMLInputElement, InputProps>(({ className, mode, .
       ? `${className} ${baseClass} ${baseClass}--${mode}`
       : className
       ? `${className} ${baseClass}`
-      : `${baseClass}`;
-  
+      : baseClass;
+
   return <input {...props} ref={ref} className={classString} />;
 });
 
