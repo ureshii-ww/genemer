@@ -1,0 +1,5 @@
+@use 'src/styles/variables/measuring';
+
+.greetings-block {
+  margin-bottom: measuring.$m-8;
+}

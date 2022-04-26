@@ -1,4 +1,5 @@
 import React, { FC } from 'react';
+import './page-title.scss';
 
 interface PageTitleProps {
   greeting: string;
