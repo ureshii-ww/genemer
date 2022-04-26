@@ -3,7 +3,7 @@ import { useAppSelector } from '../../../hooks/useAppSelector';
 import { changeNewStatus, saveStatus } from '../../../store/reducers/status';
 import { ChangeEvent, useState } from 'react';
 
-export const useStatusBlock = () => {
+export const useStatusTooltip = () => {
   const dispatch = useAppDispatch();
   const statusValue = useAppSelector(state => state.status.value);
   const [isEditing, setIsEditing] = useState<boolean>(false);

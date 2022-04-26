@@ -1,0 +1,46 @@
+@use 'src/styles/variables/color';
+@use 'src/styles/variables/size';
+@use 'src/styles/variables/measuring';
+@use 'src/styles/placeholders/text-size';
+
+.status-tooltip {
+  min-height: 2.875rem;
+  width: 30rem;
+  background-color: color.$bg-status;
+  position: relative;
+  padding: measuring.$m-12;
+
+  &__wrapper {
+    padding-left: size.$form-label-width;
+  }
+
+  &__buttons {
+    position: absolute;
+    top: -(measuring.$m-36);
+    right: 0;
+  }
+
+  &__button {
+    &:not(:last-child) {
+      margin-right: measuring.$m-4;
+    }
+  }
+
+  &__text {
+    @extend %text-sm;
+    color: color.$tc-status;
+    overflow-wrap: break-word;
+  }
+
+  &:after {
+    content: '';
+    width: 0;
+    height: 0;
+    position: absolute;
+    top: -(measuring.$m-8);
+    left: measuring.$m-8;
+    border-left: measuring.$m-8 solid transparent;
+    border-right: measuring.$m-8 solid transparent;
+    border-bottom: measuring.$m-8 solid color.$bg-status;
+  }
+}
