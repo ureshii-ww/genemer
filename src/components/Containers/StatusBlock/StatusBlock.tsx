@@ -15,7 +15,11 @@ const StatusBlock = () => {
           {isEditing ? 'Отмена' : 'Сменить статус'}
         </TransparentButton>
       </div>
-      {!isEditing ? <p>{statusValue}</p> : <StatusArea defaultValue={statusValue} onChange={handleChangeStatus} />}
+      {!isEditing ? (
+        <p>{statusValue}</p>
+      ) : (
+        <StatusArea defaultValue={statusValue} onChange={handleChangeStatus} />
+      )}
     </div>
   );
 };
