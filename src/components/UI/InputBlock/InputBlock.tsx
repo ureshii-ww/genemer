@@ -1,4 +1,5 @@
 import React, { FC, ReactNode } from 'react';
+import './input-block.scss';
 
 interface InputBlockProps {
   label: string;
@@ -21,7 +22,7 @@ const InputBlock: FC<InputBlockProps> = ({
   const classString = className ? `${baseClass} ${className}` : baseClass;
 
   return (
-    <div className={classString}>
+    <fieldset className={classString}>
       <label className="input-block__label" htmlFor={name}>
         {label}
       </label>
@@ -34,7 +35,7 @@ const InputBlock: FC<InputBlockProps> = ({
           <p className="input-block__annotation">{annotation}</p>
         </div>
       )}
-    </div>
+    </fieldset>
   );
 };
 

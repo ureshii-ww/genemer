@@ -1,0 +1,9 @@
+@use 'src/styles/placeholders/input-base';
+
+.input-text {
+  @extend %input-base;
+
+  &--error {
+    @extend %input-base--error;
+  }
+}

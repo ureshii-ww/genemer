@@ -1,4 +1,5 @@
 import React, { forwardRef, SelectHTMLAttributes } from 'react';
+import './input-select.scss';
 
 export interface InputSelectProps extends SelectHTMLAttributes<HTMLSelectElement> {}
 

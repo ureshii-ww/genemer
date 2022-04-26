@@ -1,4 +1,5 @@
 import React, { forwardRef, InputHTMLAttributes } from 'react';
+import './input-checkbox.scss';
 
 export interface InputCheckboxProps extends InputHTMLAttributes<HTMLInputElement> {
   title: string;

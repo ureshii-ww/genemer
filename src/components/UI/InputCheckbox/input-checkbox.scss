@@ -1,0 +1,10 @@
+@use 'src/styles/variables/measuring';
+
+.input-checkbox {
+  margin-right: measuring.$m-10;
+
+  &__wrapper {
+    display: flex;
+    align-items: center;
+  }
+}

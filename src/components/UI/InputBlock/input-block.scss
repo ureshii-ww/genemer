@@ -1,0 +1,42 @@
+@use 'src/styles/placeholders/text-size';
+@use 'src/styles/variables/size';
+@use 'src/styles/variables/measuring';
+@use 'src/styles/variables/color';
+
+.input-block {
+  padding: 0;
+  border: none;
+  margin-bottom: measuring.$m-42;
+  display: grid;
+  grid-template-columns: size.$form-label-width size.$form-input-width 1fr;
+
+  &__label {
+    @extend %text-xl;
+    display: flex;
+    align-items: center;
+  }
+
+  &__input {
+    &-wrapper {
+    }
+  }
+
+  &__error {
+    @extend %text-xs;
+    color: color.$tc-error;
+  }
+
+  &__annotation {
+    @extend %text-xs;
+    color: color.$tc-regular-gray;
+    &-wrapper {
+      display: flex;
+      align-items: center;
+      padding-left: measuring.$m-18;
+    }
+  }
+
+  &--short {
+    grid-template-columns: size.$form-label-width 1fr;
+  }
+}

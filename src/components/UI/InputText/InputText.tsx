@@ -1,4 +1,5 @@
 import React, { forwardRef, InputHTMLAttributes } from 'react';
+import './input-text.scss';
 
 export interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
   mode?: 'red';
