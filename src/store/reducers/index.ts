@@ -1,3 +1,6 @@
 import { combineReducers } from '@reduxjs/toolkit';
+import universities from './universities';
 
-export default combineReducers({})
+export default combineReducers({
+  universities,
+})
