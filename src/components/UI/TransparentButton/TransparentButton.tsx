@@ -1,4 +1,5 @@
 import React, { ButtonHTMLAttributes, FC } from 'react';
+import './transparent-button.scss';
 
 interface TransparentButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {}
 

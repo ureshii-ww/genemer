@@ -1,0 +1,11 @@
+@use 'src/styles/placeholders/button-base';
+@use 'src/styles/placeholders/text-size';
+@use 'src/styles/variables/color';
+
+.transparent-button {
+  @extend %button-base;
+  @extend %text-xs;
+  background-color: transparent;
+  color: color.$tc-accent;
+  border-bottom: 1px dotted color.$tc-accent;
+}
