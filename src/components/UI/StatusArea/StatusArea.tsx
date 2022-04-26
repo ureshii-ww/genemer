@@ -1,5 +1,4 @@
 import React, { forwardRef, TextareaHTMLAttributes } from 'react';
-import './input-textarea.scss';
 
 export interface StatusAreaProps
   extends Omit<TextareaHTMLAttributes<HTMLTextAreaElement>, 'className'> {}

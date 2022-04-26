@@ -2,18 +2,22 @@ import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { StatusState } from './types';
 
 const initialState: StatusState = {
-  value: null,
+  value: '',
+  newValue: '',
 };
 
 const statusSlice = createSlice({
   name: 'status',
   initialState,
   reducers: {
-    setStatus: (state, { payload }: PayloadAction<string>) => {
-      state.value = payload;
+    saveStatus: (state) => {
+      state.value = state.newValue;
     },
+    changeNewStatus: (state, {payload}: PayloadAction<string>) => {
+      state.newValue = payload;
+    }
   },
 });
 
-export const { setStatus } = statusSlice.actions;
+export const { saveStatus, changeNewStatus } = statusSlice.actions;
 export default statusSlice.reducer;

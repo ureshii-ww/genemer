@@ -1,3 +1,4 @@
 export interface StatusState {
-  value: string | null;
+  value: string;
+  newValue: string;
 }
