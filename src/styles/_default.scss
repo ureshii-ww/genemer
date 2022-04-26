@@ -1,0 +1,10 @@
+@use 'variables/color';
+@use 'placeholders/text-size';
+@use 'placeholders/text-weight';
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: color.$bg-body;
+  @extend %text-base;
+  @extend %weight-rg;
+}
