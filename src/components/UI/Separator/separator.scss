@@ -1,0 +1,9 @@
+@use 'src/styles/variables/color';
+@use 'src/styles/variables/measuring';
+
+.separator {
+  margin: measuring.$m-42 0 measuring.$m-32 0;
+  background-color: color.$bg-separator;
+  height: 1px;
+  width: 100%;
+}

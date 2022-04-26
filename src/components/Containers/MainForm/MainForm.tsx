@@ -5,6 +5,7 @@ import InputSelect from '../../UI/InputSelect/InputSelect';
 import InputText from '../../UI/InputText/InputText';
 import InputCheckbox from '../../UI/InputCheckbox/InputCheckbox';
 import MainButton from '../../UI/MainButton/MainButton';
+import Separator from '../../UI/Separator/Separator';
 
 const MainForm = () => {
   const { useFormData, universitiesData, citiesData, lastModified, onSubmit } = useMainForm();
@@ -43,14 +44,21 @@ const MainForm = () => {
         </InputSelect>
       </InputBlock>
 
-      <InputBlock label="Пароль" name="password" error={errors.password?.message}>
+      <Separator />
+
+      <InputBlock
+        label="Пароль"
+        name="password"
+        error={errors.password?.message}
+        annotation="Ваш новый пароль должен содержать не менее 5 символов">
         <InputText {...register('password', { required: 'Укажите пароль' })} type="password" />
       </InputBlock>
 
       <InputBlock
         label="Пароль ещё раз"
         name="passwordRepeat"
-        error={errors.passwordRepeat?.message}>
+        error={errors.passwordRepeat?.message}
+        annotation="Повторите пароль, пожалуйста, это обезопасит вас с нами на случай ошибки.">
         <InputText
           {...register('passwordRepeat', {
             required: 'Повторите пароль',
@@ -60,16 +68,23 @@ const MainForm = () => {
         />
       </InputBlock>
 
-      <InputBlock label="Электронная почта" name="email" error={errors.email?.message}>
+      <Separator />
+
+      <InputBlock
+        label="Электронная почта"
+        name="email"
+        error={errors.email?.message}
+        annotation="Можно изменить адрес, указанный при регистрации">
         <InputText {...register('email', { required: 'Укажите E-mail' })} type="email" />
       </InputBlock>
 
-      <div>
+      <fieldset>
+        <p>Я согласен</p>
         <InputCheckbox
           {...register('isGettingEmails')}
           title="принимать актуальную информацию на емейл"
         />
-      </div>
+      </fieldset>
 
       <div>
         <MainButton>Изменить</MainButton>
