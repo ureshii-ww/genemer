@@ -1,10 +1,11 @@
-import React from 'react';
+import React, { Fragment } from 'react';
+import MainPage from '../Pages/MainPage';
 
 const Layout = () => {
   return (
-    <div>
-    
-    </div>
+    <Fragment>
+      <MainPage />
+    </Fragment>
   );
 };
 
