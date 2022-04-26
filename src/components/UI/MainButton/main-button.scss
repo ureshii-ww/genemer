@@ -1,0 +1,12 @@
+@use 'src/styles/placeholders/button-base';
+@use 'src/styles/placeholders/text-size';
+@use 'src/styles/variables/color';
+@use 'src/styles/variables/measuring';
+
+.main-button {
+  @extend %button-base;
+  @extend %text-lg;
+  color: color.$tc-button;
+  background-color: color.$bg-button;
+  padding: measuring.$m-10 measuring.$m-18;
+}
